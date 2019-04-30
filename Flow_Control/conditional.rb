@@ -8,5 +8,3 @@ elsif a == 4
 else
   puts "a is neither 3, nor 4"
 end
-
-puts 5
