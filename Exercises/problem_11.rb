@@ -27,10 +27,18 @@ contact_data = [["joe@email.com", "123 Main st.", "555-123-4567"],
             ["sally@email.com", "404 Not Found Dr.", "123-234-3454"]]
 
 contacts = {"Joe Smith" => {}, "Sally Johnson" => {}}
+
 fields = [:email, :address, :phone]
 
-contacts.map do |person, info|
-  (0..2).each { |i| info[fields[i]] =  }
+#my version of problem 14 with bonus
+# contacts.each do |name, info|
+#   (0..2).each { |i| info[fields[i]] = contact_data[0][i] }
+#   contact_data.shift
+# end
+
+#LS solution
+contacts.each_with_index do |(name, info), i|
+  fields.each { |field| info[field] = contact_data[i].shift }
 end
 
 p contacts
